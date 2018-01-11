@@ -28,7 +28,12 @@ let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
-let g:syntastic_javascript_eslint_exe = 'npm run lint --'
+let g:syntastic_rust_checkers = ['rustc']
+let g:syntastic_ruby_checkers = ['rubocop']
 
-" autosave
-autocmd CursorHold,CursorHoldI * update
+" Start NERDTree on Vim startup except for commit messages
+:autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
+
+" Visual settings
+set background=light
+colorscheme PaperColor
