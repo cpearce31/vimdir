@@ -23,17 +23,24 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" Add column number
+set statusline+=col:\ %c\
+
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
 let g:syntastic_javascript_checkers = ['eslint']
+let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 let g:syntastic_rust_checkers = ['rustc']
 let g:syntastic_ruby_checkers = ['rubocop']
 
 " Start NERDTree on Vim startup except for commit messages
-:autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
+" :autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
 
 " Visual settings
 set background=light
 colorscheme PaperColor
+
+" Use system clipboard
+set clipboard=unnamedplus
