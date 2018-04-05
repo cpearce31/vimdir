@@ -34,6 +34,7 @@ let g:syntastic_javascript_checkers = ['eslint']
 let g:syntastic_javascript_eslint_exe = '$(npm bin)/eslint'
 let g:syntastic_rust_checkers = ['rustc']
 let g:syntastic_ruby_checkers = ['rubocop']
+let g:syntastic_sh_checkers = ['shellcheck']
 
 " Start NERDTree on Vim startup except for commit messages
 " :autocmd VimEnter * if &filetype !=# 'gitcommit' | NERDTree | endif
